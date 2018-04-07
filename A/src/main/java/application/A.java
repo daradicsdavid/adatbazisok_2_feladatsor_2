@@ -14,11 +14,11 @@ public class A {
 
         System.out.println("Sűrű index");
         new SuruIndex(adatok, rekordok_szama).suruIndexSzamolas();
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Ritka index");
         new RitkaIndex(adatok, rekordok_szama).ritkaIndexSzamolas();
-        System.out.println("");
+        System.out.println();
     }
 
 
