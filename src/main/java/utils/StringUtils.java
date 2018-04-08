@@ -18,6 +18,13 @@ public class StringUtils {
         return sub.replace(template);
     }
 
+
+    public static void printImportantTemplate(String template, Map.Entry<String, Object>... data) {
+        printTemplate("=====================================================");
+        printTemplate(template, data);
+        printTemplate("=====================================================");
+    }
+
     public static void printTemplate(String template, Map.Entry<String, Object>... data) {
         System.out.println(transformTemplate(template, data));
         System.out.println();

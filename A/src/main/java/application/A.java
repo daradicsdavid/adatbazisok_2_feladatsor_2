@@ -2,6 +2,8 @@ package application;
 
 import input.AInput;
 
+import static utils.StringUtils.printImportantTemplate;
+
 public class A {
 
     static AInput adatok;
@@ -9,6 +11,9 @@ public class A {
 
     public static void main(String[] args) {
 
+        printImportantTemplate("Adatfálj:n/3");
+        printImportantTemplate("Sűrű index:n/10");
+        printImportantTemplate("Ritka index:n/30");
 
         adatok = AInput.feladatsor;
 
