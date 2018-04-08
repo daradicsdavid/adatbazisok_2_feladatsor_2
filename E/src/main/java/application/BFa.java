@@ -56,11 +56,10 @@ public abstract class BFa {
         return osszes;
     }
 
-    protected double keresesiIdo(Integer mutatokSzama, Integer kulcsokSzama) {
-        double keresesiIdo = Math.log(mutatokSzama) / Math.log(kulcsokSzama);
-        printTemplate("Keresési ido: ${kulcsokSzama} alapú logaritmus ${mutatokSzama} (mutatók száma) = ${keresesiIdo}",
-                entry("mutatokSzama", mutatokSzama),
-                entry("kulcsokSzama", kulcsokSzama),
+    protected double keresesiIdo(Integer szintekSzama) {
+        double keresesiIdo = szintekSzama +1;
+        printTemplate("Keresési ido: ${szintekSzama} (szintek száma) + 1 (blokk beolvasása) = ${keresesiIdo}",
+                entry("szintekSzama", szintekSzama),
                 entry("keresesiIdo", keresesiIdo));
 
         return keresesiIdo;

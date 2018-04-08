@@ -16,21 +16,22 @@ public class RekordBFa extends BFa {
         printTemplate("====================================================");
         printTemplate("Rekordok a levelekben B fa.");
 
-        adatok.kulcsPerBlokk = 10;
-        adatok.minKulcsPerBlokk = 7;
+        adatok.mutatoPerBlokk = 10;
+        adatok.minMutatoPerBlokk = 7;
 
         Integer mutatoBlokkok = 0;
         Integer szint = 1;
-        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam, adatok.minKulcsPerBlokk);
+        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam, adatok.minMutatoPerBlokk);
         mutatoBlokkok += levelekSzama;
         while (levelekSzama != 1) {
-            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.minKulcsPerBlokk);
+            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.minMutatoPerBlokk);
             mutatoBlokkok += levelekSzama;
+            szint++;
         }
 
         adatEsMutatoBlokkokSzama(0, mutatoBlokkok);
 
-        keresesiIdo(adatok.rekordSzam, adatok.minKulcsPerBlokk);
+        keresesiIdo(szint);
 
 
         printTemplate("====================================================");

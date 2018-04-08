@@ -17,16 +17,17 @@ public class RendezettRitka extends BFa {
         Integer adatBlokkok = adatBlokkokSzamolas();
         Integer mutatoBlokkok = 0;
         Integer szint = 1;
-        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam / 10, adatok.kulcsPerBlokk);
+        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam / 10, adatok.mutatoPerBlokk);
         mutatoBlokkok += levelekSzama;
         while (levelekSzama != 1) {
-            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.kulcsPerBlokk);
+            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.mutatoPerBlokk);
             mutatoBlokkok += levelekSzama;
+            szint++;
         }
 
         adatEsMutatoBlokkokSzama(adatBlokkok, mutatoBlokkok);
 
-        keresesiIdo(adatok.rekordSzam / 10, adatok.kulcsPerBlokk);
+        keresesiIdo(szint);
         printTemplate("====================================================");
     }
 

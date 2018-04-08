@@ -17,16 +17,17 @@ public class RendezetlenSuru extends BFa {
         Integer adatBlokkok = adatBlokkokSzamolas();
         Integer mutatoBlokkok = 0;
         Integer szint = 1;
-        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam, adatok.minKulcsPerBlokk);
+        Integer levelekSzama = levelekSzamolasa(adatok.rekordSzam, adatok.minMutatoPerBlokk);
         mutatoBlokkok += levelekSzama;
         while (levelekSzama != 1) {
-            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.minKulcsPerBlokk);
+            levelekSzama = szintSzamolas(szint, levelekSzama, adatok.minMutatoPerBlokk);
             mutatoBlokkok += levelekSzama;
+            szint++;
         }
 
         adatEsMutatoBlokkokSzama(adatBlokkok, mutatoBlokkok);
 
-        keresesiIdo(adatok.rekordSzam, adatok.minKulcsPerBlokk);
+        keresesiIdo(szint);
         printTemplate("====================================================");
     }
 }
